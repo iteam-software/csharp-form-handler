@@ -5,6 +5,12 @@
     <GeneratePackageOnBuild>False</GeneratePackageOnBuild>
     <Description>Provides the IMakeEmails interface.</Description>
     <Version>0.0.1</Version>
+    <Authors>software@iteamnm.com</Authors>
+    <Company>iTEAM Consulting</Company>
+    <Copyright>Copyright 2017 iTEAM Consulting</Copyright>
+    <PackageLicenseUrl>https://raw.githubusercontent.com/iteam-consulting/csharp-form-handler/master/LICENSE</PackageLicenseUrl>
+    <PackageProjectUrl>https://github.com/iteam-consulting/csharp-form-handler</PackageProjectUrl>
+    <PackageIconUrl>https://s.gravatar.com/avatar/468367f85c4e89a0bbd1ac1d0f43adb1?s=80</PackageIconUrl>
   </PropertyGroup>
 
 </Project>

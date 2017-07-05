@@ -3,6 +3,15 @@
   <PropertyGroup>
     <TargetFramework>net461</TargetFramework>
     <GeneratePackageOnBuild>False</GeneratePackageOnBuild>
+    <Description>Implementation package for IMakeEmails. This is responsible for creating valid, email friendly html given a set of key value pairs representing form data.</Description>
+    <PackageIconUrl>https://s.gravatar.com/avatar/468367f85c4e89a0bbd1ac1d0f43adb1?s=80</PackageIconUrl>
+    <PackageLicenseUrl>https://raw.githubusercontent.com/iteam-consulting/csharp-form-handler/master/LICENSE</PackageLicenseUrl>
+    <PackageProjectUrl>https://github.com/iteam-consulting/csharp-form-handler</PackageProjectUrl>
+    <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
+    <Copyright>Copyright 2017 iTEAM Consulting</Copyright>
+    <Authors>software@iteamnm.com</Authors>
+    <Company>iTEAM Consulting</Company>
+    <Version>0.0.1</Version>
   </PropertyGroup>
 
   <ItemGroup>
