@@ -6,18 +6,8 @@ assembly_info:
   assembly_file_version: '{version}'
   assembly_informational_version: '{version}'
 image: Visual Studio 2017
-configuration: Release
-platform: Any CPU
 before_build:
 - cmd: nuget restore
 build:
   publish_nuget: true
   verbosity: minimal
-artifacts:
-- path: '**\*.nupkg'
-deploy:
-- provider: NuGet
-  skip_symbols: false
-  artifact: /.*\.nupkg/
-  api_key:
-    secure: 1ari/m47eHoJGgmOFDsCXYZRSQSjb1JFNrZz1T45QeQcwYQAqHOpN9IkcCXwoh3W
