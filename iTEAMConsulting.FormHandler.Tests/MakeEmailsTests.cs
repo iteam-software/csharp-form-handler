@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Xunit;
 
 namespace iTEAMConsulting.FormHandler.Tests
@@ -14,12 +15,37 @@ namespace iTEAMConsulting.FormHandler.Tests
         [Fact]
         public void BuildShould_CreateString()
         {
+            // Arrange
             var emails = new MakeEmails();
 
-            var result = emails.Build(new[] { new KeyValuePair<string, string>("key", "value") });
+            // Act
+            var result = emails.Build(new {
+                key = "value"
+            });
 
+            // Assert
             Assert.NotEmpty(result);
             Assert.NotNull(result);
+        }
+
+        [Fact]
+        public void BuildShouldThrowOn_NullArgument()
+        {
+            // Arrange
+            var emails = new MakeEmails();
+
+            // Act and Assert
+            Assert.Throws<ArgumentNullException>(() => { var html = emails.Build(null); });
+        }
+
+        [Fact]
+        public void BuildShouldThrowOn_InvalidArgument()
+        {
+            // Arrange
+            var emails = new MakeEmails();
+
+            // Act and Assert
+            Assert.Throws<ArgumentException>(() => { var html = emails.Build(new { }); });
         }
     }
 }

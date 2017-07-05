@@ -16,6 +16,16 @@ namespace iTEAMConsulting.FormHandler
         /// <returns>An email friendly HTML string</returns>
         public string Build(object formData)
         {
+            if (formData == null)
+            {
+                throw new ArgumentNullException();
+            }
+
+            if (!formData.GetType().GetProperties().Any())
+            {
+                throw new ArgumentException();
+            }
+
             throw new NotImplementedException();
         }
     }
