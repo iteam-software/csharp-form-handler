@@ -2,6 +2,9 @@
 
   <PropertyGroup>
     <TargetFramework>net461</TargetFramework>
+    <GeneratePackageOnBuild>False</GeneratePackageOnBuild>
+    <Description>Provides the IMakeEmails interface.</Description>
+    <Version>0.0.1</Version>
   </PropertyGroup>
 
 </Project>
