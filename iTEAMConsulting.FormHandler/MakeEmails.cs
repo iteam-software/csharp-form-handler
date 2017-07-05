@@ -4,6 +4,7 @@ using System;
 using System.Linq;
 using System.Collections.Generic;
 using System.Reflection;
+using WebMarkupMin.Core;
 
 namespace iTEAMConsulting.FormHandler
 {
@@ -52,7 +53,7 @@ namespace iTEAMConsulting.FormHandler
                 ", key, value));
             }
 
-            return string.Format(@"
+            var html = string.Format(@"
                 <!DOCTYPE html PUBLIC ""-//W3C//DTD XHTML 1.0 Transitional//EN"" ""http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"">
                 <html xmlns=""http://www.w3.org/1999/xhtml"">
                     <head>
@@ -82,6 +83,13 @@ namespace iTEAMConsulting.FormHandler
                     </body>
                 </html>
             ", this._options.Title, this._options.Description, string.Join("", tableRows));
+
+            var htmlMinifierSettings = new HtmlMinificationSettings() {
+                RemoveOptionalEndTags = false
+            };
+            var htmlMinifier = new HtmlMinifier(htmlMinifierSettings);
+            var minifiedResult = htmlMinifier.Minify(html);
+            return minifiedResult.MinifiedContent;
         }
     }
 }
