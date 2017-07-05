@@ -6,7 +6,7 @@
     <title>iTEAMConsulting.FormHandler</title>
     <authors>software@iteamnm.com</authors>
     <owners>software@iteamnm.com</owners>
-    <licenseUrl>https://github.com/iteam-consulting/csharp-form-handler/blob/master/LICENSE</licenseUrl>
+    <licenseUrl>https://raw.githubusercontent.com/iteam-consulting/csharp-form-handler/master/LICENSE</licenseUrl>
     <projectUrl>https://github.com/iteam-consulting/csharp-form-handler</projectUrl>
     <iconUrl>https://s.gravatar.com/avatar/468367f85c4e89a0bbd1ac1d0f43adb1?s=80</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
