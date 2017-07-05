@@ -1,7 +1,6 @@
 <?xml version="1.0"?>
 <package >
   <metadata>
-    <id>$id$</id>
     <version>$version$</version>
     <title>iTEAMConsulting.FormHandler</title>
     <authors>software@iteamnm.com</authors>
