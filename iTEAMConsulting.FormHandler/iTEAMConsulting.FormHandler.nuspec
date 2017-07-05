@@ -3,15 +3,14 @@
   <metadata>
     <id>$id$</id>
     <version>$version$</version>
-    <title>$title$</title>
-    <authors>$author$</authors>
-    <owners>$author$</owners>
+    <title>iTEAMConsulting.FormHandler</title>
+    <authors>software@iteamnm.com</authors>
+    <owners>software@iteamnm.com</owners>
     <licenseUrl>https://github.com/iteam-consulting/csharp-form-handler/blob/master/LICENSE</licenseUrl>
     <projectUrl>https://github.com/iteam-consulting/csharp-form-handler</projectUrl>
     <iconUrl>https://s.gravatar.com/avatar/468367f85c4e89a0bbd1ac1d0f43adb1?s=80</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <description>$description$</description>
-    <releaseNotes>Summary of changes made in this release of the package.</releaseNotes>
+    <description>Implementation package for IMakeEmails. This is responsible for creating valid, email friendly html given a set of key value pairs representing form data.</description>
     <copyright>Copyright 2017</copyright>
   </metadata>
 </package>

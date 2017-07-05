@@ -3,8 +3,6 @@
   <PropertyGroup>
     <TargetFramework>net461</TargetFramework>
     <GeneratePackageOnBuild>False</GeneratePackageOnBuild>
-    <Version>0.0.1</Version>
-    <Description>Implementation package for IMakeEmails. This is responsible for creating valid, email friendly html given a set of key value pairs representing form data.</Description>
   </PropertyGroup>
 
   <ItemGroup>
