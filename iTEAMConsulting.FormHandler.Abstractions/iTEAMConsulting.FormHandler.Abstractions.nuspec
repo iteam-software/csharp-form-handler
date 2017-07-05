@@ -11,7 +11,6 @@
     <iconUrl>https://s.gravatar.com/avatar/468367f85c4e89a0bbd1ac1d0f43adb1?s=80</iconUrl>
     <requireLicenseAcceptance>true</requireLicenseAcceptance>
     <description>Provides the IMakeEmails interface.</description>
-    <releaseNotes>Summary of changes made in this release of the package.</releaseNotes>
     <copyright>Copyright 2017</copyright>
   </metadata>
 </package>
