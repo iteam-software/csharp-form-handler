@@ -13,7 +13,7 @@ before_build:
 build:
   verbosity: minimal
 after_build:
-- cmd: nuget pack iTEAMConsulting.FormHandler.Abstractions\iTEAMConsulting.FormHandler.Abstractions.nuspec -Verbosity detailed
+- cmd: dotnet pack iTEAMConsulting.FormHandler.Abstractions\iTEAMConsulting.FormHandler.Abstractions.nuspec /p:PackageVersion=%APPVEYOR_BUILD_VERSION%
 artifacts:
 - path: '**\*.nupkg'
   name: NuGet
