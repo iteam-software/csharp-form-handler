@@ -1,7 +1,8 @@
-﻿using Microsoft.Extensions.Options;
+﻿using HtmlAgilityPack;
+using Microsoft.Extensions.Options;
 using Moq;
 using System;
-using System.Collections.Generic;
+using System.Linq;
 using Xunit;
 
 namespace iTEAMConsulting.FormHandler.Tests
@@ -42,11 +43,40 @@ namespace iTEAMConsulting.FormHandler.Tests
             var emails = new MakeEmails(_options);
 
             // Act
-            var result = emails.Build(new TestObject());
+            var html = emails.Build(new TestObject());
 
             // Assert
-            Assert.NotEmpty(result);
-            Assert.NotNull(result);
+            Assert.NotEmpty(html);
+            Assert.NotNull(html);
+        }
+
+        [Fact]
+        public void BuildShould_ReturnMinifiedHTML()
+        {
+            // Arrange
+            var emails = new MakeEmails(_options);
+
+            // Act
+            var html = emails.Build(new TestObject());
+
+            // Assert
+            Assert.DoesNotContain("\n", html);
+            Assert.DoesNotContain("  ", html);
+        }
+
+        [Fact]
+        public void BuildShould_ReturnValidHTML()
+        {
+            // Arrange
+            var emails = new MakeEmails(_options);
+
+            // Act
+            var html = emails.Build(new TestObject());
+            var doc = new HtmlDocument();
+            doc.LoadHtml(html);
+
+            // Assert
+            Assert.Equal(0, doc.ParseErrors.Count());
         }
 
         [Fact]
