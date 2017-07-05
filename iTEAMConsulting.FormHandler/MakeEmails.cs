@@ -87,9 +87,8 @@ namespace iTEAMConsulting.FormHandler
             var htmlMinifierSettings = new HtmlMinificationSettings() {
                 RemoveOptionalEndTags = false
             };
-            var htmlMinifier = new HtmlMinifier(htmlMinifierSettings);
-            var minifiedResult = htmlMinifier.Minify(html);
-            return minifiedResult.MinifiedContent;
+            var minifiedHtml = new HtmlMinifier(htmlMinifierSettings).Minify(html).MinifiedContent;
+            return minifiedHtml;
         }
     }
 }

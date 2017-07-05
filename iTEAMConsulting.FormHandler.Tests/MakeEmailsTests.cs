@@ -51,6 +51,20 @@ namespace iTEAMConsulting.FormHandler.Tests
         }
 
         [Fact]
+        public void BuildShould_ReturnMinifiedHTML()
+        {
+            // Arrange
+            var emails = new MakeEmails(_options);
+
+            // Act
+            var html = emails.Build(new TestObject());
+
+            // Assert
+            Assert.DoesNotContain("\n", html);
+            Assert.DoesNotContain("  ", html);
+        }
+
+        [Fact]
         public void BuildShould_ReturnValidHTML()
         {
             // Arrange
@@ -60,10 +74,9 @@ namespace iTEAMConsulting.FormHandler.Tests
             var html = emails.Build(new TestObject());
             var doc = new HtmlDocument();
             doc.LoadHtml(html);
-            var valid = doc.ParseErrors.Count() == 0;
 
             // Assert
-            Assert.Equal(true, valid);
+            Assert.Equal(0, doc.ParseErrors.Count());
         }
 
         [Fact]
