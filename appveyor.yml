@@ -13,7 +13,7 @@ before_build:
 build:
   verbosity: minimal
 after_build:
-- cmd: nuget pack
+- cmd: nuget pack iTEAMConsulting.FormHandler.Abstractions\iTEAMConsulting.FormHandler.Abstractions.nuspec
 artifacts:
 - path: '**\*.nupkg'
   name: NuGet
