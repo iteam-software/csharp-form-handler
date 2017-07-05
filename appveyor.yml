@@ -11,7 +11,7 @@ platform: Any CPU
 before_build:
 - cmd: nuget restore
 build:
-  publish_nuget: true
+  verbosity: minimal
 after_build:
 - cmd: nuget pack
 artifacts:
