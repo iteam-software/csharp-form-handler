@@ -36,6 +36,16 @@ namespace iTEAMConsulting.FormHandler
                 throw new ArgumentException();
             }
 
+            // Variables from options
+            string title = this._options.Title;
+            string description = this._options.Description;
+            string font = this._options.Font;
+            int fontSize = this._options.FontSize;
+            string fontColor = this._options.FontColor;
+            int cellPadding = this._options.CellPadding;
+            int cellBorder = this._options.CellBorder;
+
+            // List of data table rows
             ICollection<string> tableRows = new List<string>();
 
             // Build body of the message
@@ -47,8 +57,8 @@ namespace iTEAMConsulting.FormHandler
                 string value = prop.GetValue(formData, null).ToString();
                 tableRows.Add(string.Format(@"
                     <tr>
-                        <td style=""font-family: Arial, Verdana, sans-serif; padding: 0 0 0 20px;"">{0}</td>
-                        <td style=""font-family: Arial, Verdana, sans-serif; padding: 0 0 0 20px;"">{1}</td>
+                        <td>{0}</td>
+                        <td>{1}</td>
                     </tr>
                 ", key, value));
             }
@@ -61,28 +71,48 @@ namespace iTEAMConsulting.FormHandler
                         <title>{0}</title>
                         <meta name=""viewport"" content=""width=device-width, initial-scale=1.0"" />
                     </head>
-                    <body style=""margin: 0; padding: 0; font-family: Arial, sans-serif;"">
-                        <table border=""0"" cellpadding=""0"" cellspacing=""0"" width=""100%"">
+                    <body style=""margin: 0; padding: 0; font-family: {3}; font-size: {4}px; color: {5};"">
+                        <table border=""0"" cellpadding=""16"" cellspacing=""0"" width=""100%"">
                             <tr>
-                                <td style=""padding: 48px 16px 48px 16px;"">
-                                    <table align=""center"" border=""0"" cellpadding=""0"" cellspacing=""0"" width=""600"" style=""border-collapse: collapse;"">
-                                        <tr>
-                                            <td style=""font-family: Arial, Verdana, sans-serif; padding: 0 0 0 20px;"">{1}</td>
-                                        </tr>
+                                <td>
+                                    <table
+                                        align=""center""
+                                        border=""0""
+                                        cellpadding=""0""
+                                        cellspacing=""0""
+                                        width=""600""
+                                        style=""border-collapse: collapse;""
+                                    >
+                                        <tr><td style=""font-size: 2em;"">{0}</td></tr>
+                                        <tr><td>{1}</td></tr>
                                     </table>
                                 </td>
                             </tr>
                             <tr>
-                                <td style=""padding: 48px 16px 48px 16px;"">
-                                    <table align=""center"" border=""0"" cellpadding=""0"" cellspacing=""0"" width=""600"" style=""border-collapse: collapse;"">
+                                <td>
+                                    <table
+                                        align=""center""
+                                        border=""{6}""
+                                        cellpadding=""{7}""
+                                        cellspacing=""0""
+                                        width=""600""
+                                        style=""border-collapse: collapse;""
+                                    >
                                         {2}
                                     </table>
                                 </td>
                             </tr>
                         </table>
                     </body>
-                </html>
-            ", this._options.Title, this._options.Description, string.Join("", tableRows));
+                </html>",
+                title,                      // 0
+                description,                // 1
+                string.Join("", tableRows), // 2
+                font,                       // 3
+                fontSize,                   // 4
+                fontColor,                  // 5
+                cellBorder,                 // 6
+                cellPadding);               // 7
 
             var htmlMinifierSettings = new HtmlMinificationSettings() {
                 RemoveOptionalEndTags = false

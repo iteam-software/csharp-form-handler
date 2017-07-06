@@ -18,14 +18,8 @@ namespace iTEAMConsulting.FormHandler.Tests
 
         public MakeEmailsTests()
         {
-            var options = new MakeEmailsOptions
-            {
-                Title = "Test",
-                Description = "Test Description"
-            };
-
             var mock = new Mock<IOptions<MakeEmailsOptions>>();
-            mock.Setup(i => i.Value).Returns(options);
+            mock.Setup(i => i.Value).Returns(new MakeEmailsOptions());
 
             _options = mock.Object;
         }
