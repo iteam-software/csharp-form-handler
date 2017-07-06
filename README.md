@@ -1,4 +1,7 @@
 # C# Form Handler
+[![Build status](https://ci.appveyor.com/api/projects/status/axrcfcwwvy7oakkc/branch/master?svg=true)](https://ci.appveyor.com/project/mlynam/csharp-form-handler/branch/master)
+
+
 This package is responsible for creating valid, email friendly html given a set of key-value pairs representing form data. The html will be minified and returned as a string. A `Title` and `Description` are options to override in the email's template.
 
 ## Getting Started
