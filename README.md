@@ -8,6 +8,7 @@ PM> Install-Package iTEAMConsulting.FormHandler
 ```
 
 ## Usage
+### Form Data
 Form data should be inside a model object like:
 ```c#
 class FormData
@@ -22,6 +23,9 @@ var data = new FormData
   Year = 2017
 };
 ```
+### Options
+Look at the available options you may override [here](https://raw.githubusercontent.com/iteam-consulting/csharp-form-handler/master/iTEAMConsulting.FormHandler/MakeEmailsOptions.cs).
+
 You may create the options accessor using the static method:
 ```c#
 using Microsoft.Extensions.Options;
@@ -29,12 +33,14 @@ using Microsoft.Extensions.Options;
 var optionsAccessor = new Options.Create<MakeEmailsOptions>(
   new MakeEmailsOptions
   {
-    Title = "Title",
-    Description = "Description"
+    // Place overrides here
+    Title = "Override Title", // Default: "Form Data Submission"
+    FontColor = "#4d67a9", // Default: "#222222"
   }
 );
 ```
-Getting the email friendly HTML:
+### Getting HTML
+To get the email friendly HTML, just build it by passing the data through:
 ```c#
 var emails = new MakeEmails(optionsAccessor);
 var html = emails.Build(data);
