@@ -8,7 +8,7 @@ PM> Install-Package iTEAMConsulting.FormHandler
 ```
 
 ## Usage
-Form data should be inside an model object like:
+Form data should be inside a model object like:
 ```c#
 class FormData
 {
@@ -22,7 +22,7 @@ var data = new FormData
   Year = 2017
 };
 ```
-You may create the options using the static method:
+You may create the options accessor using the static method:
 ```c#
 using Microsoft.Extensions.Options;
 
