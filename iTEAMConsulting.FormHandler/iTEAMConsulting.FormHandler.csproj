@@ -11,7 +11,7 @@
     <Copyright>Copyright 2017 iTEAM Consulting</Copyright>
     <Authors>software@iteamnm.com</Authors>
     <Company>iTEAM Consulting</Company>
-    <Version>0.0.1</Version>
+    <Version>0.2.3</Version>
   </PropertyGroup>
 
   <ItemGroup>

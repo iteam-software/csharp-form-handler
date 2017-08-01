@@ -4,7 +4,7 @@
     <TargetFramework>net461</TargetFramework>
     <GeneratePackageOnBuild>False</GeneratePackageOnBuild>
     <Description>Provides the IMakeEmails interface.</Description>
-    <Version>0.0.1</Version>
+    <Version>0.2.3</Version>
     <Authors>software@iteamnm.com</Authors>
     <Company>iTEAM Consulting</Company>
     <Copyright>Copyright 2017 iTEAM Consulting</Copyright>

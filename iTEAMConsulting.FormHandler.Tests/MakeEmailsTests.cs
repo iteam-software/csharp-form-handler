@@ -10,6 +10,7 @@ namespace iTEAMConsulting.FormHandler.Tests
     class TestObject
     {
         public int TestProp { get; set; } = 1;
+        public string Stuff { get; set; }
     }
 
     public class MakeEmailsTests

@@ -54,7 +54,7 @@ namespace iTEAMConsulting.FormHandler
             {
                 // Get keys and values from formData and add a row to the body.
                 string key = prop.Name;
-                string value = prop.GetValue(formData, null).ToString();
+                string value = (prop.GetValue(formData, null) ?? "").ToString();
                 tableRows.Add(string.Format(@"
                     <tr>
                         <td>{0}</td>
